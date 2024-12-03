@@ -1,28 +1,32 @@
 import { Link } from "@nextui-org/link";
 import { Snippet } from "@nextui-org/snippet";
 import { button as buttonStyles } from "@nextui-org/theme";
-import { Card, CardHeader } from "@nextui-org/react";
+import { Card, CardBody, CardHeader } from "@nextui-org/card";
+import { Chip } from "@nextui-org/chip";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
-import { CardBody } from "@nextui-org/card";
+
+type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  website?: string;
+};
 
 export default function IndexPage() {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-xl text-center justify-center">
-          <span className={title()}>Make&nbsp;</span>
-          <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
+          <span className={title()}>Building&nbsp;</span>
+          <span className={title({ color: "blue" })}>Products&nbsp;</span>
           <br />
-          <span className={title()}>
-            websites regardless of your design experience.
-          </span>
-          <div className={subtitle({ class: "mt-4" })}>
-            Beautiful, fast and modern React UI library.
-          </div>
+          <span className={title()}>people want.</span>
+          <span className={title({ color: "yellow" })}>&nbsp;Fast. &nbsp;</span>
+          <div className={subtitle({ class: "mt-4" })}>Get in touch.</div>
         </div>
 
         <div className="flex gap-3">
@@ -44,28 +48,82 @@ export default function IndexPage() {
           </Link>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap gap-4">
           <Snippet hideCopyButton hideSymbol variant="bordered">
             <span>Product Engineering.</span>
           </Snippet>
+          <Snippet hideCopyButton hideSymbol variant="bordered">
+            <span>Data Platforms.</span>
+          </Snippet>
+          <Snippet hideCopyButton hideSymbol variant="bordered">
+            <span>Integrating AI into products.</span>
+          </Snippet>
+          <Snippet hideCopyButton hideSymbol variant="bordered">
+            <span>Industrialising selfserve saas.</span>
+          </Snippet>
         </div>
       </section>
-      <h2>Projects</h2>
-      <Card>
-        <CardHeader>
-          </CardHeader>
-          <CardBody>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-              quos.
-            </p>
-          </CardBody>
-        </Card>
+      <section className="flex flex-col gap-4">
+        <h2 className={title({ size: "sm" })}>Projects</h2>
+        <div className="w-full overflow-x-auto">
+          <div className="flex gap-4 pb-4 px-1">
+            {projects.map((project) => (
+              <Card key={project.title} className="min-w-[300px] max-w-[400px]">
+                <CardHeader className="flex justify-between items-start">
+                  <h3 className="font-semibold">{project.title}</h3>
+                  {project.tags.includes("founder") && (
+                    <Chip color="primary" size="sm" variant="flat">
+                      founder
+                    </Chip>
+                  )}
+                  {project.tags.includes("cofounder") && (
+                    <Chip color="primary" size="sm" variant="flat">
+                      cofounder
+                    </Chip>
+                  )}
+                </CardHeader>
+                <CardBody className="flex flex-col gap-4">
+                  <p className="text-sm text-default-500">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags
+                      .filter((tag) => tag !== "founder")
+                      .map((tag) => (
+                        <Chip
+                          key={tag}
+                          color="default"
+                          size="sm"
+                          variant="flat"
+                        >
+                          {tag}
+                        </Chip>
+                      ))}
+                  </div>
+                  {project.website && (
+                    <Link
+                      isExternal
+                      className={buttonStyles({
+                        variant: "bordered",
+                        radius: "full",
+                        size: "sm",
+                      })}
+                      href={project.website}
+                    >
+                      View Project
+                    </Link>
+                  )}
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
     </DefaultLayout>
   );
 }
 
-const projects = [
+const projects: Project[] = [
   {
     title: "trendii",
     website: "https://trendii.com",
@@ -83,7 +141,7 @@ const projects = [
   },
   {
     title: "bagstashhh",
-    tags: ["founder", "saas", "ai", "NFT", "data platforms"],
+    tags: ["founder", "saas", "ai", "partnerships", "data platforms"],
     website: "https://bagstashhh.com",
     description:
       "Luxury fashion collection management system, incl. public profiles, authenticity verification, buy/sell network effects, insurance, and luxury item metadata index (imdb for luxury goods)",
@@ -112,7 +170,7 @@ const projects = [
     title: "various insuretech startups",
     tags: ["saas", "insurance", "data platforms", "devops/sre"],
     description:
-      "Head of Engineering in a series of insuretech startups integrating with carriers, PAS, and building on inhouse quote engines ",
+      "Staff & Head Of Eng in a series of insuretech startups integrating with carriers, PAS, and building on inhouse insurance systems.",
   },
   {
     title: "marketing technology agency",
@@ -129,6 +187,6 @@ const projects = [
     title:
       "Various freelance engineering, website/ecomm, online marketing, data, ",
     tags: ["data platforms", "engineering", "devops/sre"],
-    description: "Helping out people here and there in need.",
+    description: "Helping out people here and there in need",
   },
 ];
