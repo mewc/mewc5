@@ -21,6 +21,9 @@ export default function IndexPage() {
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-xl text-center justify-center">
+          <div className="mb-6 text-xl homemade-apple-regular">
+            Hi, I&apos;m Michael <span className="wave">👋</span>
+          </div>
           <span className={title()}>Building&nbsp;</span>
           <span className={title({ color: "blue" })}>Products&nbsp;</span>
           <br />
