@@ -68,10 +68,13 @@ export default function IndexPage() {
       </section>
       <section className="flex flex-col gap-4">
         <h2 className={title({ size: "sm" })}>Projects</h2>
-        <div className="w-full overflow-x-auto">
-          <div className="flex gap-4 pb-4 px-1">
+        <div className="w-full overflow-x-auto pr-8">
+          <div className="flex flex-row gap-4 pb-4 px-8">
             {projects.map((project) => (
-              <Card key={project.title} className="min-w-[300px] max-w-[400px]">
+              <Card
+                key={project.title}
+                className="min-w-[300px] max-w-[400px]  my-8 mr-4"
+              >
                 <CardHeader className="flex justify-between items-start">
                   <h3 className="font-semibold">{project.title}</h3>
                   {project.tags.includes("founder") && (
@@ -119,6 +122,7 @@ export default function IndexPage() {
                 </CardBody>
               </Card>
             ))}
+            <div className="w-16">&nbsp;</div>
           </div>
         </div>
       </section>
@@ -150,6 +154,13 @@ const projects: Project[] = [
       "Luxury fashion collection management system, incl. public profiles, authenticity verification, buy/sell network effects, insurance, and luxury item metadata index (imdb for luxury goods)",
   },
   {
+    title: "linktree",
+    tags: ["saas", "growth", "engineering", "high-volume"],
+    website: "https://linktr.ee",
+    description:
+      "One of australias most recent Unicorn startups, as employee 13. Head of Growth Engineering during the hyper-growth phase to 300 people and from 1 to 30 million users.",
+  },
+  {
     title: "secret project 1",
     tags: [
       "hardware",
@@ -163,17 +174,10 @@ const projects: Project[] = [
       "custom built hardware off ESP32 to ingest wifi probe requests, integrate with AI models to provide insights into customer movements in physical stores. Integrated with retail OPs platform for task & comms in retail networks.",
   },
   {
-    title: "linktree",
-    tags: ["saas", "growth", "engineering", "high-volume"],
-    website: "https://linktr.ee",
-    description:
-      "One of australias most recent Unicorn startups, as employee 13. Head of Growth Engineering during the hyper-growth phase to 300 people and from 1 to 30 million users.",
-  },
-  {
     title: "various insuretech startups",
     tags: ["saas", "insurance", "data platforms", "devops/sre"],
     description:
-      "Staff & Head Of Eng in a series of insuretech startups integrating with carriers, PAS, and building on inhouse insurance systems.",
+      "Staff Eng & Head Of Eng in a series of insuretech startups integrating with carriers, PAS, and building on inhouse insurance mgmt + distribution systems.",
   },
   {
     title: "marketing technology agency",
