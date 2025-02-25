@@ -136,7 +136,7 @@ const projects: Project[] = [
     tags: ["founder", "saas", "ai", "integrations", "BI", "rag"],
     website: "https://chartcastr.com",
     description:
-    "Data BI tool connecting charts from BI sources (gsheets, etc), integrating in contextual meaning (what does this chart mean? whats the history?), then delivering messages (slack, msteams, etc.) and facilitating discussions on the topic.",
+      "Data BI tool connecting charts from BI sources (gsheets, etc), integrating in contextual meaning (what does this chart mean? whats the history?), then delivering messages (slack, msteams, etc.) and facilitating discussions on the topic.",
   },
   {
     title: "trendii",
@@ -176,16 +176,9 @@ const projects: Project[] = [
   },
   {
     title: "secret project 1",
-    tags: [
-      "hardware",
-      "ai",
-      "cofounder",
-      "saas",
-      "self-serve",
-      "data platforms",
-    ],
+    tags: ["hardware", "ai", "saas", "self-serve", "data platforms"],
     description:
-      "custom built hardware off ESP32 to ingest wifi probe requests, integrate with AI models to provide insights into customer movements in physical stores. Integrated with retail OPs platform for task & comms in retail networks.",
+      "Ingest wifi signal to event data, integrate with AI models, provide insights into customer movements in physical stores. Integrated with retail ops platform for task & comms in retail networks.",
   },
   {
     title: "various insuretech startups",
