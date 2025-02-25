@@ -176,7 +176,7 @@ const projects: Project[] = [
   },
   {
     title: "secret project 1",
-    tags: ["hardware", "ai", "saas", "self-serve", "data platforms"],
+    tags: ["hardware", "ai", "saas", "product engineering", "data platforms"],
     description:
       "Ingest wifi signal to event data, integrate with AI models, provide insights into customer movements in physical stores. Integrated with retail ops platform for task & comms in retail networks.",
   },
