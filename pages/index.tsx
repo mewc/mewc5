@@ -132,6 +132,13 @@ export default function IndexPage() {
 
 const projects: Project[] = [
   {
+    title: "chartcastr",
+    tags: ["founder", "saas", "ai", "integrations", "BI", "rag"],
+    website: "https://chartcastr.com",
+    description:
+    "Data BI tool connecting charts from BI sources (gsheets, etc), integrating in contextual meaning (what does this chart mean? whats the history?), then delivering messages (slack, msteams, etc.) and facilitating discussions on the topic.",
+  },
+  {
     title: "trendii",
     website: "https://trendii.com",
     tags: [
@@ -144,7 +151,7 @@ const projects: Project[] = [
       "devops/sre",
     ],
     description:
-      "Custom AI models matching images on articles to live products on ecommerce fashion & homeware retailers. ",
+      "Custom AI models matching images on articles to live products on ecommerce fashion & homeware retailers.",
   },
   {
     title: "bagstashhh",
@@ -158,7 +165,14 @@ const projects: Project[] = [
     tags: ["saas", "growth", "engineering", "high-volume"],
     website: "https://linktr.ee",
     description:
-      "One of australias most recent Unicorn startups, as employee 13. Head of Growth Engineering during the hyper-growth phase to 300 people and from 1 to 30 million users.",
+      "One of australias most recent Unicorn startups, as employee 14. Head of Growth Engineering during the hyper-growth phase to 300 people and from 1 to 30 million users.",
+  },
+  {
+    title: "clearcalcs",
+    tags: ["saas", "growth", "data platforms", "customer analytics"],
+    website: "https://clearcalcs.com",
+    description:
+      "Setting up data platforms, integrating data sources and making available data for internal BI & customer facing analytics (freelance work)",
   },
   {
     title: "secret project 1",
