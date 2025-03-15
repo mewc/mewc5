@@ -139,6 +139,13 @@ const projects: Project[] = [
       "Data BI tool connecting charts from BI sources (gsheets, etc), integrating in contextual meaning (what does this chart mean? whats the history?), then delivering messages (slack, msteams, etc.) and facilitating discussions on the topic.",
   },
   {
+    title: "teraflect",
+    tags: ["founder", "saas", "iot", "data platforms", "offline"],
+    website: "https://teraflect.com",
+    description:
+      "Land management for agriculture - delightful usage, offline capable connecting to gis with iot  (searching for pre-seed)",
+  },
+  {
     title: "trendii",
     website: "https://trendii.com",
     tags: [
